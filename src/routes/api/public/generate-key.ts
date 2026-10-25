@@ -22,7 +22,7 @@ export const Route = createFileRoute("/api/public/generate-key")({
         const token = new URL(request.url).searchParams.get("token") ?? "";
         const expected = process.env["ZIMADMIN_PASSWORD"];
         if (!expected) return new Response("Key generation unavailable.", { status: 503, headers });
-        if (!token || !(await safeEqual(token, expected))) {
+        if (!token || !(await safeEqual(token.trim().toLowerCase(), expected.trim().toLowerCase()))) {
           return new Response("Unauthorized.", { status: 401, headers });
         }
 
