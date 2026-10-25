@@ -14,10 +14,10 @@ import {
 export const Route = createFileRoute("/zimadmin")({
   head: () => ({
     meta: [
-      { title: "Key Generator — Simple Pay" },
-      { name: "description", content: "Create single-use access keys for Simple Pay." },
-      { property: "og:title", content: "Key Generator — Simple Pay" },
-      { property: "og:description", content: "Create single-use access keys for Simple Pay." },
+      { title: "Key Generator — Zimbola Clux" },
+      { name: "description", content: "Create single-use access keys for Zimbola Clux." },
+      { property: "og:title", content: "Key Generator — Zimbola Clux" },
+      { property: "og:description", content: "Create single-use access keys for Zimbola Clux." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
@@ -125,7 +125,7 @@ function ZimAdminPage() {
               <LockKeyhole aria-hidden="true" className="size-5" />
             )}
           </div>
-          <span className="text-lg font-semibold">Simple Pay</span>
+          <span className="text-lg font-semibold">Zimbola Clux</span>
         </div>
 
         {status === "checking" ? (
