@@ -50,7 +50,7 @@ export const unlockAdmin = createServerFn({ method: "POST" })
 
     const expectedKey = process.env["ZIMADMIN_PASSWORD"];
     if (!expectedKey) throw new Error("Admin access is temporarily unavailable.");
-    if (!(await matchesSecret(data.key.trim(), expectedKey))) return { ok: false as const };
+    if (!(await matchesSecret(data.key.trim().toLowerCase(), expectedKey.trim().toLowerCase()))) return { ok: false as const };
 
     const session = await useSession<AdminSession>(getAdminSessionConfig());
     await session.update({ authorized: true });
