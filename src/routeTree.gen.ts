@@ -20,6 +20,7 @@ import { Route as SuccessRouteImport } from './routes/success'
 import { Route as SuccessDetailsRouteImport } from './routes/success-details'
 import { Route as UnlockRouteImport } from './routes/unlock'
 import { Route as ZimadminRouteImport } from './routes/zimadmin'
+import { Route as ApiPublicGenerateKeyRouteImport } from './routes/api/public/generate-key'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -76,6 +77,11 @@ const ZimadminRoute = ZimadminRouteImport.update({
   path: '/zimadmin',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPublicGenerateKeyRoute = ApiPublicGenerateKeyRouteImport.update({
+  id: '/api/public/generate-key',
+  path: '/api/public/generate-key',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -89,6 +95,7 @@ export interface FileRoutesByFullPath {
   '/success-details': typeof SuccessDetailsRoute
   '/unlock': typeof UnlockRoute
   '/zimadmin': typeof ZimadminRoute
+  '/api/public/generate-key': typeof ApiPublicGenerateKeyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -102,6 +109,7 @@ export interface FileRoutesByTo {
   '/success-details': typeof SuccessDetailsRoute
   '/unlock': typeof UnlockRoute
   '/zimadmin': typeof ZimadminRoute
+  '/api/public/generate-key': typeof ApiPublicGenerateKeyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -116,6 +124,7 @@ export interface FileRoutesById {
   '/success-details': typeof SuccessDetailsRoute
   '/unlock': typeof UnlockRoute
   '/zimadmin': typeof ZimadminRoute
+  '/api/public/generate-key': typeof ApiPublicGenerateKeyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -131,6 +140,7 @@ export interface FileRouteTypes {
     | '/success-details'
     | '/unlock'
     | '/zimadmin'
+    | '/api/public/generate-key'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -144,6 +154,7 @@ export interface FileRouteTypes {
     | '/success-details'
     | '/unlock'
     | '/zimadmin'
+    | '/api/public/generate-key'
   id:
     | '__root__'
     | '/'
@@ -157,6 +168,7 @@ export interface FileRouteTypes {
     | '/success-details'
     | '/unlock'
     | '/zimadmin'
+    | '/api/public/generate-key'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -171,6 +183,7 @@ export interface RootRouteChildren {
   SuccessDetailsRoute: typeof SuccessDetailsRoute
   UnlockRoute: typeof UnlockRoute
   ZimadminRoute: typeof ZimadminRoute
+  ApiPublicGenerateKeyRoute: typeof ApiPublicGenerateKeyRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -252,6 +265,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ZimadminRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/generate-key': {
+      id: '/api/public/generate-key'
+      path: '/api/public/generate-key'
+      fullPath: '/api/public/generate-key'
+      preLoaderRoute: typeof ApiPublicGenerateKeyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -267,6 +287,7 @@ const rootRouteChildren: RootRouteChildren = {
   SuccessDetailsRoute: SuccessDetailsRoute,
   UnlockRoute: UnlockRoute,
   ZimadminRoute: ZimadminRoute,
+  ApiPublicGenerateKeyRoute: ApiPublicGenerateKeyRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
