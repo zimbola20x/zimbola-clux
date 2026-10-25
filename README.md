@@ -1,4 +1,4 @@
-# Simple Pay
+# Zimbola Clux
 
 create an webapp for entering payment details like enter receiver name upi id and amount and then when click on pay take to success page just for now create this later i will give you ui how it should look
 

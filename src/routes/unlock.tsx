@@ -16,12 +16,12 @@ import { redeemAccessKey } from "@/lib/access.functions";
 export const Route = createFileRoute("/unlock")({
   head: () => ({
     meta: [
-      { title: "Enter Access Key — Simple Pay" },
-      { name: "description", content: "Enter your paid access key to continue to Simple Pay." },
-      { property: "og:title", content: "Enter Access Key — Simple Pay" },
+      { title: "Enter Access Key — Zimbola Clux" },
+      { name: "description", content: "Enter your paid access key to continue to Zimbola Clux." },
+      { property: "og:title", content: "Enter Access Key — Zimbola Clux" },
       {
         property: "og:description",
-        content: "Enter your paid access key to continue to Simple Pay.",
+        content: "Enter your paid access key to continue to Zimbola Clux.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
@@ -83,7 +83,7 @@ function UnlockPage() {
             </div>
             <DialogTitle className="text-xl">Login successful</DialogTitle>
             <DialogDescription className="text-access-muted">
-              Your access key is verified. You can now continue to Simple Pay.
+              Your access key is verified. You can now continue to Zimbola Clux.
             </DialogDescription>
           </DialogHeader>
           <Button
@@ -91,7 +91,7 @@ function UnlockPage() {
             onClick={continueToSite}
             className="mt-2 h-11 w-full rounded-lg bg-access-accent text-access-text hover:bg-access-accent/90"
           >
-            Continue to Simple Pay
+            Continue to Zimbola Clux
           </Button>
         </DialogContent>
       </Dialog>
@@ -100,7 +100,7 @@ function UnlockPage() {
           <div className="flex size-11 items-center justify-center rounded-xl bg-access-accent/15 text-access-accent">
             <KeyRound aria-hidden="true" className="size-5" />
           </div>
-          <span className="text-lg font-semibold">Simple Pay</span>
+          <span className="text-lg font-semibold">Zimbola Clux</span>
         </div>
 
         <div className="mb-8">
@@ -139,7 +139,7 @@ function UnlockPage() {
             disabled={isSubmitting}
             className="h-12 w-full rounded-lg bg-access-accent text-access-text hover:bg-access-accent/90"
           >
-            {isSubmitting ? "Checking key…" : "Continue to Simple Pay"}
+            {isSubmitting ? "Checking key…" : "Continue to Zimbola Clux"}
           </Button>
         </form>
 
